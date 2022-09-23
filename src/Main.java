@@ -32,21 +32,27 @@ public class Main {
             System.out.println("What operation (+, -, * or /) for " + v1 + " and " + v2 + "?\t");
             String operation = input.nextLine();
 
-            if (operation.equals("+")) {
-                System.out.println(v1 + " + " + v2 + " =\t\t" + addition(v1, v2));
-                ReTry();
-            } else if (operation.equals("-")) {
-                System.out.println(v1 + " - " + v2 + " =\t\t" + subtraction(v1, v2));
-                ReTry();
-            } else if (operation.equals("*")) {
-                System.out.println(v1 + " * " + v2 + " =\t\t" + multiplication(v1, v2));
-                ReTry();
-            } else if (operation.equals("/")) {
-                System.out.println(v1 + " / " + v2 + " =\t\t" + division(v1, v2));
-                ReTry();
-            } else {
-                System.out.println("Invalid choice, try again!");
-                operation();
+            switch (operation) {
+                case "+" -> {
+                    System.out.println(v1 + " + " + v2 + " =\t\t" + addition(v1, v2));
+                    ReTry();
+                }
+                case "-" -> {
+                    System.out.println(v1 + " - " + v2 + " =\t\t" + subtraction(v1, v2));
+                    ReTry();
+                }
+                case "*" -> {
+                    System.out.println(v1 + " * " + v2 + " =\t\t" + multiplication(v1, v2));
+                    ReTry();
+                }
+                case "/" -> {
+                    System.out.println(v1 + " / " + v2 + " =\t\t" + division(v1, v2));
+                    ReTry();
+                }
+                default -> {
+                    System.out.println("Invalid choice, try again!");
+                    operation();
+                }
             }
         } catch (Exception e) {
             System.out.println("Invalid choice, try again!");
