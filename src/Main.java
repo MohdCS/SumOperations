@@ -24,12 +24,16 @@ public class Main {
         return (a / b);
     }
 
+    public static double pow(double a, double b){
+        return (Math.pow(a, b));
+    }
+
     public static void operation() {
 
         try {
             Scanner input = new Scanner(System.in);
 
-            System.out.println("What operation (+, -, * or /) for " + v1 + " and " + v2 + "?\t");
+            System.out.println("What operation (+, -, *, / or pow) for " + v1 + " and " + v2 + "?\t");
             String operation = input.nextLine();
 
             switch (operation) {
@@ -47,6 +51,10 @@ public class Main {
                 }
                 case "/" -> {
                     System.out.println(v1 + " / " + v2 + " =\t\t" + division(v1, v2));
+                    ReTry();
+                }
+                case "pow", "POW", "Pow", "P", "p" -> {
+                    System.out.println(v1 + " pow " + v2 + " =\t\t" + pow(v1, v2));
                     ReTry();
                 }
                 default -> {
