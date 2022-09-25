@@ -34,30 +34,30 @@ public class Main {
             Scanner input = new Scanner(System.in);
 
             System.out.println("What operation (+, -, *, / or pow) for " + v1 + " and " + v2 + "?\t");
-            String operation = input.nextLine();
+            String selection = input.nextLine();
 
-            switch (operation) {
-                case "+" -> {
+            switch (selection) {
+                case "+" : {
                     System.out.println(v1 + " + " + v2 + " =\t\t" + addition(v1, v2));
                     ReTry();
                 }
-                case "-" -> {
+                case "-" : {
                     System.out.println(v1 + " - " + v2 + " =\t\t" + subtraction(v1, v2));
                     ReTry();
                 }
-                case "*" -> {
+                case "*" : {
                     System.out.println(v1 + " * " + v2 + " =\t\t" + multiplication(v1, v2));
                     ReTry();
                 }
-                case "/" -> {
+                case "/" : {
                     System.out.println(v1 + " / " + v2 + " =\t\t" + division(v1, v2));
                     ReTry();
                 }
-                case "pow", "POW", "Pow", "P", "p" -> {
+                case "pow", "POW", "Pow", "P", "p" : {
                     System.out.println(v1 + " pow " + v2 + " =\t\t" + pow(v1, v2));
                     ReTry();
                 }
-                default -> {
+                default : {
                     System.out.println("Invalid choice, try again!");
                     operation();
                 }
