@@ -5,8 +5,10 @@ public class Main {
     public static double v2;
 
     public static void main(String[] args) {
+
         inputValues();
     }
+
 
     public static double addition(double a, double b) {
         return (a + b);
@@ -30,42 +32,42 @@ public class Main {
 
     public static void operation() {
 
-        try {
             Scanner input = new Scanner(System.in);
 
-            System.out.println("What operation (+, -, *, / or pow) for " + v1 + " and " + v2 + "?\t");
+            System.out.println("What operation (+, -, *, / or pow) for " + v1 + " and " + v2 + "?\n" +
+                    "[enter -1 to quit]\n");
             String selection = input.nextLine();
 
             switch (selection) {
                 case "+" : {
                     System.out.println(v1 + " + " + v2 + " =\t\t" + addition(v1, v2));
-                    ReTry();
+                    retry();
                 }
                 case "-" : {
                     System.out.println(v1 + " - " + v2 + " =\t\t" + subtraction(v1, v2));
-                    ReTry();
+                    retry();
                 }
                 case "*" : {
                     System.out.println(v1 + " * " + v2 + " =\t\t" + multiplication(v1, v2));
-                    ReTry();
+                    retry();
                 }
                 case "/" : {
                     System.out.println(v1 + " / " + v2 + " =\t\t" + division(v1, v2));
-                    ReTry();
+                    retry();
                 }
                 case "pow", "POW", "Pow", "P", "p" : {
                     System.out.println(v1 + " pow " + v2 + " =\t\t" + pow(v1, v2));
-                    ReTry();
+                    retry();
+                }
+                case "-1" : {
+                    System.out.println("Bye!");
+                    System.exit(1);
                 }
                 default : {
                     System.out.println("Invalid choice, try again!");
                     operation();
                 }
             }
-        } catch (Exception e) {
-            System.out.println("Invalid choice, try again!");
-            operation();
-        }
 
     }
 
@@ -87,7 +89,7 @@ public class Main {
         }
     }
 
-    public static void ReTry() {
+    public static void retry() {
         Scanner input = new Scanner(System.in);
         System.out.print("Try again?\t\t");
         String answer = input.nextLine();
@@ -99,7 +101,7 @@ public class Main {
             System.exit(1);
         } else {
             System.out.println("Invalid answer, try again!");
-            ReTry();
+            retry();
         }
     }
 }
