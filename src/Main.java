@@ -41,23 +41,23 @@ public class Main {
             switch (selection) {
                 case "+" : {
                     System.out.println(v1 + " + " + v2 + " =\t\t" + addition(v1, v2));
-                    retry();
+                    operation();
                 }
                 case "-" : {
                     System.out.println(v1 + " - " + v2 + " =\t\t" + subtraction(v1, v2));
-                    retry();
+                    operation();
                 }
                 case "*" : {
                     System.out.println(v1 + " * " + v2 + " =\t\t" + multiplication(v1, v2));
-                    retry();
+                    operation();
                 }
                 case "/" : {
                     System.out.println(v1 + " / " + v2 + " =\t\t" + division(v1, v2));
-                    retry();
+                    operation();
                 }
                 case "pow", "POW", "Pow", "P", "p" : {
                     System.out.println(v1 + " pow " + v2 + " =\t\t" + pow(v1, v2));
-                    retry();
+                    operation();
                 }
                 case "-1" : {
                     System.out.println("Bye!");
